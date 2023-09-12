@@ -9,10 +9,11 @@ def translate_text_route():
         # Get the text input from the request JSON
         data = request.get_json()
         input_text = data.get("text")
+        target_language=data.get("lang")
 
         if input_text:
             # Perform translation using your function and pass the input text
-            translated_text = translate_text(input_text)  # Call the translation function
+            translated_text = translate_text(input_text,target_language)  # Call the translation function
 
             # Return the translated text as a JSON response
             return jsonify({"translated_text": translated_text})
