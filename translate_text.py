@@ -1,6 +1,7 @@
 from deep_translator import GoogleTranslator
-
+import deep_translator
 def translate_text(input_text, target_language='hi'):
+    print(deep_translator.__version__)
     def translate_chunk(chunk):
         """Wrapper for Google Translate with character limit workaround."""
         translate = GoogleTranslator(source='auto', target=target_language).translate
