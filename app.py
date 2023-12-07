@@ -1,6 +1,7 @@
 from flask import Flask, request, jsonify
-from translate_text import translate_text  # Import your text translation function here
+from translate_text import translate_text
 import os
+
 app = Flask(__name__)
 
 @app.route("/translate-text", methods=["POST"])
@@ -14,7 +15,7 @@ def translate_text_route():
         if input_text:
             # Perform translation using your function and pass the input text
             translated_text = translate_text(input_text,target_language)  # Call the translation function
-
+        
             # Return the translated text as a JSON response
             return jsonify({"translated_text": translated_text})
         else:
